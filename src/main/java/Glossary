@@ -1,0 +1,23 @@
+Concepts Covered:
+
+<functional_interfaces_1>
+- Functional Interface (noarg)
+- Lambda Expressions
+- Default Interface Methods
+- Static Interface Methods
+
+<functional_interfaces_2>
+- Functional Interface (arg)
+- Lambda Expressions
+
+<functional_interfaces_3>
+- Predicate Interface
+- Function Interface
+
+<method_references_1>
+- Method Reference (Instance Method)
+- Method Reference (Static Method)
+
+<method_references_2>
+- Method Reference (Constructor Method, noarg)
+- Method Reference (Constructor Method, args)

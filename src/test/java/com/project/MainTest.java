@@ -2,6 +2,8 @@ package com.project;
 
 import functional_interfaces_1.Car;
 import functional_interfaces_2.Calculator;
+import method_references_1.Animal;
+import method_references_1.Mammal;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -63,6 +65,29 @@ public class MainTest {
         Function<String, Integer> wordLength = s -> s.length();
 
         Assertions.assertEquals(wordLength.apply("Hello World!"), 12);
+
+    }
+
+    @Test
+    public void testMethodReferenceInstance() {
+
+        Mammal cat = new Mammal();
+        Animal tabbyCat = cat::meow;
+
+        tabbyCat.sound("Meow!");
+
+        Assertions.assertEquals("Meow. Meow!", outputStreamCaptor.toString().trim());
+
+    }
+
+    @Test
+    public void testMethodReferenceStatic() {
+
+        Animal poodleDog = Mammal::woof;
+
+        poodleDog.sound("Woof!");
+
+        Assertions.assertEquals("Bark. Woof!", outputStreamCaptor.toString().trim());
 
     }
 

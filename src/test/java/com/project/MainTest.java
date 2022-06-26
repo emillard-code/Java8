@@ -4,6 +4,9 @@ import functional_interfaces_1.Car;
 import functional_interfaces_2.Calculator;
 import method_references_1.Animal;
 import method_references_1.Mammal;
+import method_references_2.Employee;
+import method_references_2.EmployeeA;
+import method_references_2.EmployeeB;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -88,6 +91,26 @@ public class MainTest {
         poodleDog.sound("Woof!");
 
         Assertions.assertEquals("Bark. Woof!", outputStreamCaptor.toString().trim());
+
+    }
+
+    @Test
+    public void testMethodReferenceConstructorNoArgs() {
+
+        EmployeeA employeeA = Employee::new;
+        employeeA.getEmployee().description();
+
+        Assertions.assertEquals("This is an Employee.", outputStreamCaptor.toString().trim());
+
+    }
+
+    @Test
+    public void testMethodReferenceConstructorArgs() {
+
+        EmployeeB employeeB = Employee::new;
+        employeeB.getEmployee("John Smith", 60000).description();
+
+        Assertions.assertEquals("This Employee's name is John Smith, and they make $60000 a year.", outputStreamCaptor.toString().trim());
 
     }
 
